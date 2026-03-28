@@ -1,0 +1,193 @@
+@import url("https://sethburkart123.github.io/sf-pro-fonts/fonts.css");
+
+* {
+    font-family: 'SF Pro Display', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(30, 30, 30, 1);
+    display: flex;
+    justify-content: center;
+    padding-top: 300px;
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+input::placeholder {
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.todo-container {
+    width: 600px;
+    height: fit-content;
+    min-height: 69px;
+    background: rgb(36, 36, 36);
+    box-shadow: 0px 0px 20px rgb(19, 19, 19);
+    border-radius: 30px;
+
+    padding: 17px 0px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title-btn_cont {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0px 20px;
+}
+
+.title-btn_cont > h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+
+}
+
+.todo-mainbtns_cont {
+    display: flex;
+    gap: 10px;
+}
+
+.todo-mainbtns_cont > button {
+    font-size: 14px;
+    cursor: pointer;
+    border: none; 
+    border-radius: 8px;
+}
+
+.add-task_btn {
+    background: rgb(255, 255, 255, 0.9);
+    height: 32px;
+    width: 100px;
+    color: rgb(36, 36, 36);
+    font-weight: 700;  
+}
+
+.add-task_btn:hover {
+    background: rgb(255, 255, 255, 1);
+}
+
+.clear-all_btn {
+    height: 32px;
+    width: 78px;
+    background: rgb(50, 50, 50);
+    color: white;
+    font-weight: 600;
+
+    display: none;
+}
+
+.clear-all_btn:hover {
+    background: rgba(134, 43, 43, 0.5);
+    color: rgb(255, 15, 15);
+}
+
+.task-container {
+    width: 95%;
+    min-height: 50px;
+    background: rgb(50, 50, 50);
+    margin: 0px 15px;
+    padding: 0px 15px;
+    border-radius: 14px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-checkbox_cont {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox_cont {
+    height: 20px;
+    width: 20px;
+}
+
+.checkbox_cont > input[type="checkbox"] {
+    -webkit-appearance: none; 
+    appearance: none; 
+    width: 100%;
+    height: 100%;
+    background-color: rgb(62, 62, 62);
+    border: none; 
+    border-radius: 3px; 
+
+    cursor: pointer;
+}
+
+.checkbox_cont > input[type="checkbox"]:checked {
+    background-color: rgb(63, 190, 63);
+}
+
+.task-input {
+    width: 400px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+
+    padding: 0px 10px;
+    background: transparent;
+    border: none;
+}
+
+.remove-task_btn {
+    height: 30px;
+    width: 30px;
+    background: rgb(62, 62, 62);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 700;
+}
+
+.remove-task_btn:hover {
+    background: rgb(75, 75, 75);
+}
+
+.task-creator_cont {
+    height: fit-content;
+    min-width: 300px;
+    background: rgb(36, 36, 36);
+    box-shadow: 0px 0px 20px rgb(19, 19, 19);
+    border-radius: 30px;
+    padding: 17px;
+
+    display: none;
+
+    margin-left: 40px;
+}
+
+.task-creator_cont > h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: white
+}
+
+.task-creator_cont > textarea {
+    margin-top: 20px;
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}

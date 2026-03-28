@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "esnext",
+    "sourceMap": true,
+    "declaration": false, 
+    "verbatimModuleSyntax": false, 
+    "strict": true,
+    "jsx": "react-jsx",
+    "isolatedModules": false,
+    "skipLibCheck": true
+  }
+}
