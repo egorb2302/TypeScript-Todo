@@ -119,6 +119,11 @@ button {
     gap: 10px;
 }
 
+.input-checkbox_cont > p {
+    color: white;
+    font-weight: 600;
+}
+
 .checkbox_cont {
     height: 20px;
     width: 20px;
