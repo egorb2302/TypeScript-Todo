@@ -120,8 +120,12 @@ button {
 }
 
 .input-checkbox_cont > p {
+    width: 450px;
     color: white;
     font-weight: 600;
+
+    word-break: break-all;
+    margin: 10px 0px;
 }
 
 .checkbox_cont {
