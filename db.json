@@ -1,8 +1,12 @@
 {
   "tasks": [
     {
+      "task": "Помыть попу",
+      "id": "VuXSMXtRZno"
+    },
+    {
       "task": "asdasd",
-      "id": "-RBsUrZ--uc"
+      "id": "-HR8kr-oTQk"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

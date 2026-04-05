@@ -196,3 +196,8 @@ button {
     font-size: 14px;
     font-weight: 600;
 }
+
+.comp {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
