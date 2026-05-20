@@ -1,10 +1,7 @@
 import { taskCreator } from "./newTaskHandler";
+import type { TodoTaskForm } from './types/types';
 
 const textarea: HTMLTextAreaElement | null = document.querySelector('#create-task-text');
-
-interface TodoTaskForm {
-    task: string | null | undefined
-}
 
 function fetchAndClose(arg: TodoTaskForm): void {
     fetch('http://localhost:3000/tasks', {
@@ -15,10 +12,8 @@ function fetchAndClose(arg: TodoTaskForm): void {
         body: JSON.stringify(arg),
     })
 
-    if (!taskCreator || !textarea) {
-        return
-    }
-    
+    if (!taskCreator || !textarea) return 
+
     textarea.value = ''
     taskCreator.style.display = 'none';
 
@@ -30,9 +25,7 @@ if (taskCreator) {
         if (event.key === 'Enter' && !event.shiftKey) {
             event.preventDefault();
 
-            if (!textarea) {
-                return
-            }
+            if (!textarea) return 
 
             const taskText: string | undefined  = textarea.value
 

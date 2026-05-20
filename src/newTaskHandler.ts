@@ -1,7 +1,9 @@
 const addTaskBtn: HTMLElement | null = document.querySelector('.add-task_btn');
 export const taskCreator: HTMLElement | null = document.querySelector('.task-creator_cont');
 
-addTaskBtn?.addEventListener('click', () => {
+if (!addTaskBtn) throw new Error('Button was not found');
+
+addTaskBtn.addEventListener('click', () => {
     if (taskCreator) {
         if (taskCreator.style.display === '') {
             taskCreator.style.display = 'block';
@@ -14,16 +16,18 @@ addTaskBtn?.addEventListener('click', () => {
 const STORAGE_KEY: string = 'todo_checkboxes_state';
 
 function saveState(): void {
-    const allCheckboxes = document.querySelectorAll('.checkbox_cont input[type="checkbox"]');
+    const allCheckboxes: NodeListOf<Element> = document.querySelectorAll('.checkbox_cont input[type="checkbox"]');
     const states: Record<string, boolean> = {};
 
     allCheckboxes.forEach((cb: Element) => {
         const inputEl = cb as HTMLInputElement
         let id = inputEl.id;
 
-        if(!id) {
-            const taskCont = inputEl.closest('.task_container');
-            const taskId = taskCont?.getAttribute('data-ts-id');
+        if (!id) {
+            const taskCont: Element | null = inputEl.closest('.task_container');
+            if (!taskCont) return 
+
+            const taskId: string | null = taskCont.getAttribute('data-ts-id');
             id = taskId ? `cb_${taskId}` : `cb_${Date.now()}_${Math.random().toString(36)}`;
             inputEl.id = id;
         }
@@ -60,7 +64,7 @@ export function loadState(): void {
             }
         })
     } catch (er) {
-        console.log('ошибка')
+        console.log(`Error of loading state: ${er}`)
     }
 }
 

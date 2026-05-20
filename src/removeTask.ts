@@ -1,15 +1,13 @@
 document.addEventListener('click', (event) => {
     const targetEl = (event.target as HTMLElement).closest('.remove-task_btn');
+    if (!targetEl) return
 
-    if (!targetEl) {
-        return
+    let currentId;
+    if (targetEl.parentElement !== null) {
+        currentId = targetEl.parentElement?.getAttribute('data-ts-id');
     }
-
-    const currentId = targetEl.parentElement?.getAttribute('data-ts-id');
-
-    if (!currentId) {
-        return
-    }
+    
+    if (!currentId) return
 
     fetch(`http://localhost:3000/tasks/${currentId}`, {
         method: 'DELETE',
